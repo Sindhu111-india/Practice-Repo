@@ -3,13 +3,10 @@ on:
   push:
     branches:
             -main
-jobs:
-    say-hello:
+jobs:say-hello:
     runs-on: ubuntu-latest
     steps:
-      -name: checkout code
-       uses: actions/checkout@v3
-
-       -name:print greeting
-        run:echo"Hello world, Github Actions!"
-
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Greet user
+        run: echo "Hello, world! This workflow was triggered by a push."
